@@ -60,18 +60,18 @@ def classify(cons: list):
 
 
 # Функция, заданная по условию в Canvas
-def task(csv_str: str) -> None:
+def task(csv_str: str):
     csv_io = StringIO(csv_str)
     reader = csv.reader(csv_io)
     data = list(reader)
     type_1, type_2, type_3, type_4, type_5 = classify(data)
-    print(f"""\
-Тип 1: {type_1}
-Тип 2: {type_2}
-Тип 3: {type_3}
-Тип 4: {type_4}
-Тип 5: {type_5}\
-""")
+    return [
+        sorted(set(node[0] for node in type_1)),
+        sorted(set(node[0] for node in type_2)),
+        sorted(set(node[0] for node in type_3)),
+        sorted(set(node[0] for node in type_4)),
+        sorted(set(node[0] for node in type_5))
+    ]
 
 
 # Функция, которая была написана на паре
@@ -91,4 +91,5 @@ def main():
 
 
 if __name__ == "__main__":
-    task("1,2\n1,3\n2,4")
+    print(task("1,2\n1,3\n2,4"))
+    print(task("1,2\n1,3\n3,4\n3,5"))
