@@ -52,7 +52,7 @@ def dumps_answer(array: np.array):
     return json.dumps([str(pair.tolist()) for pair in array])
 
 
-def task5(string_1: str, string_2: str):
+def task(string_1: str, string_2: str):
     levels_1, args_1 = parse_str(string_1)
     levels_2, args_2 = parse_str(string_2)
 
