@@ -49,7 +49,7 @@ def get_differences(matrix: np.matrix):
 
 
 def dumps_answer(array: np.array):
-    return json.dumps([str(pair.tolist()) for pair in array])
+    return json.dumps([str([str(elem) for elem in pair.tolist()]) for pair in array])
 
 
 def task(string_1: str, string_2: str):
