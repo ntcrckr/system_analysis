@@ -59,7 +59,7 @@ def task(string_1: str, string_2: str):
     matrix_a = construct_matrix(levels_1, args_1)
     matrix_b = construct_matrix(levels_2, args_2)
 
-    merged_matrix = merge_matrices(matrix_A, matrix_B)
+    merged_matrix = merge_matrices(matrix_a, matrix_b)
 
     differences = get_differences(merged_matrix)
 
@@ -75,16 +75,6 @@ if __name__ == "__main__":
     # range_B = '["10","9","8","7","6","5","4","3","2","1"]'
     # target_difference = '[["8","9"]]'
 
-    levels_A, args_A = parse_str(range_A)
-    levels_B, args_B = parse_str(range_B)
+    ans = task(range_A, range_B)
 
-    matrix_A = construct_matrix(levels_A, args_A)
-    matrix_B = construct_matrix(levels_B, args_B)
-
-    merged_matrix = merge_matrices(matrix_A, matrix_B)
-
-    differences = get_differences(merged_matrix)
-
-    answer = dumps_answer(differences)
-
-    print(answer)
+    print(ans)
