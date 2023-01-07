@@ -41,7 +41,7 @@ def get_entropy(connections: list[list]) -> float:
     return h_mr
 
 
-def task4(csv_string: str) -> float:
+def task(csv_string: str) -> float:
     csv_data = read_csv_contents(csv_string)
     entropy = get_entropy(csv_data)
     return entropy
